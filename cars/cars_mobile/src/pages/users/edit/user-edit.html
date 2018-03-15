@@ -1,0 +1,38 @@
+<ion-card>
+  <ion-card-content>
+    <form [formGroup]="form" (ngSubmit)="editUser()">
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Age</ion-label>
+        <ion-input type="number" formControlName="age"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Street</ion-label>
+        <ion-input type="text" formControlName="street"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-input type="text" formControlName="city"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State</ion-label>
+        <ion-input type="text" formControlName="state"></ion-input>
+      </ion-item>
+
+
+      <button ion-button full type="submit" [disabled]="!form.valid">Edit</button>
+    </form>
+  </ion-card-content>
+</ion-card>      

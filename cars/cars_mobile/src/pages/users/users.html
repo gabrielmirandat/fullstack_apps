@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            Users
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+    <ion-list no-lines>
+        <button ion-button icon-only full (click)="createUser()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-item *ngFor="let user of users" (click)="viewUser(user)">
+            <ion-icon name="eye" item-right></ion-icon>
+            <h2> {{ user.name }} </h2>
+            <p> {{ user.email }} </p>
+        </button>  
+    </ion-list>
+</ion-content>
