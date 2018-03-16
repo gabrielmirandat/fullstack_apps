@@ -43,6 +43,14 @@ module.exports = (app) => {
         if(err) throw err;
         res.send({data: "Deletado com sucesso!"});
       })
+    },
+
+    getCarsByUser(req, res) {
+      let sql = `SELECT * FROM cars WHERE user_id = ${req.params.user_id}`;
+      let query = db.query(sql, (err, results) => {
+        if(err) throw err;
+        res.send({data: results});
+      })
     }
   }
   return CarController

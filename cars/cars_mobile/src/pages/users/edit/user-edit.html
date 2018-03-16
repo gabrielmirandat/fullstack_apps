@@ -1,5 +1,5 @@
-<ion-card>
-  <ion-card-content>
+<ion-content padding>
+  <ion-list no-lines>
     <form [formGroup]="form" (ngSubmit)="editUser()">
       <ion-item>
         <ion-label>Name</ion-label>
@@ -30,9 +30,8 @@
         <ion-label>State</ion-label>
         <ion-input type="text" formControlName="state"></ion-input>
       </ion-item>
-
-
+    
       <button ion-button full type="submit" [disabled]="!form.valid">Edit</button>
     </form>
-  </ion-card-content>
-</ion-card>      
+  </ion-list>
+</ion-content>     

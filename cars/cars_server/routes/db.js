@@ -6,4 +6,6 @@ module.exports = (app) => {
   app.get('/adduser1', db.addUser1);
   app.get('/createcarstable', db.createCarsTable);
   app.get('/addcar1', db.addCar1);
+  app.get('/createbrandstable', db.createBrandsTable);
+  app.get('/createmodelstable', db.createModelsTable);
 };

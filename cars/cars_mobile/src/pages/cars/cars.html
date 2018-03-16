@@ -1,12 +1,20 @@
 <ion-header>
     <ion-navbar color="primary">
-      <ion-title>
-        Cars
-      </ion-title>
+        <ion-title>
+            Cars
+        </ion-title>
     </ion-navbar>
 </ion-header>
   
 <ion-content padding>
-
+    <ion-list no-lines>
+        <button ion-button icon-only full (click)="createCar()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-item *ngFor="let car of cars" (click)="viewCar(car)">
+            <ion-icon name="eye" item-right></ion-icon>
+            <h2> {{ car.brand }} </h2>
+            <p> {{ car.model }} </p>
+        </button>  
+    </ion-list>
 </ion-content>
-  

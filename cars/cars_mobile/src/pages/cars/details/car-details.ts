@@ -1,40 +1,34 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { UsersPage } from '../users'
-import { UserEditPage } from '../edit/user-edit'
+import { CarsPage } from '../cars'
+import { CarEditPage } from '../edit/car-edit'
 import { HttpService} from '../../../app/services/http.service'
 import { AlertController } from 'ionic-angular';
 
 @Component({
-  selector: 'user-details',
-  templateUrl: 'user-details.html'
+  selector: 'car-details',
+  templateUrl: 'car-details.html'
 })
-export class UserDetailsPage {
-  user: any;
-  userCars: any[];
+export class CarDetailsPage {
+  car: any;
   
   constructor(public navCtrl: NavController, 
               public params: NavParams,
               private httpService:HttpService,
               public alertCtrl: AlertController) {
-    this.user = params.get('user');
-
-    // get cars of user
-    this.httpService.get('carsbyuser/', this.user.id).subscribe(response => {
-      this.userCars = response.data;
-    })
+    this.car = params.get('car');
   }
 
-  editUser() {
-    this.navCtrl.push(UserEditPage, {
-      user:this.user
+  editCar() {
+    this.navCtrl.push(CarEditPage, {
+      car:this.car
     });
   }
 
-  deleteUser() {
+  deleteCar() {
     let confirm = this.alertCtrl.create({
-      title: 'Tem certeza que deseja remover este usuário?',
+      title: 'Tem certeza que deseja remover este carro?',
       buttons: [
         {
           text: 'Não'          
@@ -42,8 +36,8 @@ export class UserDetailsPage {
         {
           text: 'Sim',
           handler: () => {
-            this.httpService.delete('users/delete/', this.user.id).subscribe(response => {
-              this.navCtrl.push(UsersPage);
+            this.httpService.delete('car/delete/', this.car.id).subscribe(response => {
+              this.navCtrl.push(CarsPage);
             })
           }
         }

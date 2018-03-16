@@ -17,6 +17,9 @@ export class UserEditPage {
               public params: NavParams,
               public formBuilder: FormBuilder,
               private httpService:HttpService) {
+
+    this.user = params.get('user');                
+    
     this.form = this.formBuilder.group({
       name: [this.user.name, Validators.required],
       email: [this.user.email, Validators.required],
@@ -28,7 +31,7 @@ export class UserEditPage {
   }
 
   editUser() {
-    this.httpService.update('users/', this.user.id, this.form.value).subscribe(response => {
+    this.httpService.update('user/edit/', this.user.id, this.form.value).subscribe(response => {
       console.log(response.data);
       this.navCtrl.push(UsersPage);
     });

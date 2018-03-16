@@ -1,0 +1,32 @@
+<ion-content padding>
+  <ion-list no-lines>
+    
+    <button ion-button full>
+      <ion-icon name="car" text-center> {{car.brand}} {{car.model}} [{{car.id}}] </ion-icon> 
+    </button>  
+      
+    <ion-item>
+      <h2> Chassi </h2> <p text-right> {{car.chassi_number}} </p>
+    </ion-item>
+
+    <ion-item>
+      <h2> Plate </h2> <p text-right> {{car.plate}} </p>
+    </ion-item>
+
+    <ion-item>
+      <h2> Color </h2> <p text-right> {{car.color}} </p>
+    </ion-item>
+
+    <ion-item>
+      <h2> Release Year </h2> <p text-right> {{car.release_year}} </p>
+    </ion-item>
+    
+    <button ion-button icon-only full (click)="editCar()">
+      <ion-icon name="create"></ion-icon>
+    </button>
+    <button ion-button icon-only full (click)="deleteCar()" >
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  
+  </ion-list>
+</ion-content>

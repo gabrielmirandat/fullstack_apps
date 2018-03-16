@@ -10,11 +10,11 @@ import {UserDetailsPage} from './details/user-details'
   templateUrl: 'users.html'
 })
 export class UsersPage {
-  users: any;
+  users: any[];
   
   constructor(public navCtrl: NavController, 
               private httpService:HttpService) {
-    this.httpService.getAll('users/').subscribe(response => {
+    this.httpService.getAll('users/get/').subscribe(response => {
       this.users = response.data;
     })
   }

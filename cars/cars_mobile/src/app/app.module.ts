@@ -7,7 +7,12 @@ import { UsersPage } from '../pages/users/users';
 import { UserDetailsPage } from '../pages/users/details/user-details';
 import { UserCreatePage } from '../pages/users/create/user-create';
 import { UserEditPage } from '../pages/users/edit/user-edit';
+
 import { CarsPage } from '../pages/cars/cars';
+import { CarDetailsPage } from '../pages/cars/details/car-details';
+import { CarCreatePage } from '../pages/cars/create/car-create';
+import { CarEditPage } from '../pages/cars/edit/car-edit';
+
 import { AboutPage } from '../pages/about/about';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -25,7 +30,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     UserCreatePage,
     UserDetailsPage,
     UserEditPage,
+
     CarsPage,
+    CarCreatePage,
+    CarDetailsPage,
+    CarEditPage,
+    
     AboutPage,
   ],
   imports: [
@@ -42,7 +52,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     UserCreatePage,
     UserDetailsPage,
     UserEditPage,
+
     CarsPage,
+    CarCreatePage,
+    CarDetailsPage,
+    CarEditPage,
+    
     AboutPage,
   ],
   providers: [

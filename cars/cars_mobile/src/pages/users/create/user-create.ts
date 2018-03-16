@@ -27,7 +27,7 @@ export class UserCreatePage {
   }
 
   createUser() {
-    this.httpService.add('users/', this.form.value).subscribe(response => {
+    this.httpService.add('user/add/', this.form.value).subscribe(response => {
       console.log(response.data);
       this.navCtrl.push(UsersPage);
     });
