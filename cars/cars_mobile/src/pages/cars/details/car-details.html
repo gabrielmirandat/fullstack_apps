@@ -2,7 +2,7 @@
   <ion-list no-lines>
     
     <button ion-button full>
-      <ion-icon name="car" text-center> {{car.brand}} {{car.model}} [{{car.id}}] </ion-icon> 
+      <ion-icon name="car" text-center> {{car.brand_name}} {{car.model_name}} [{{car.id}}] </ion-icon> 
     </button>  
       
     <ion-item>
@@ -14,14 +14,10 @@
     </ion-item>
 
     <ion-item>
-      <h2> Color </h2> <p text-right> {{car.color}} </p>
-    </ion-item>
-
-    <ion-item>
       <h2> Release Year </h2> <p text-right> {{car.release_year}} </p>
     </ion-item>
     
-    <button ion-button icon-only full (click)="editCar()">
+    <button ion-button icon-only full [disabled]="true">
       <ion-icon name="create"></ion-icon>
     </button>
     <button ion-button icon-only full (click)="deleteCar()" >

@@ -12,18 +12,12 @@ import { AlertController } from 'ionic-angular';
 })
 export class UserDetailsPage {
   user: any;
-  userCars: any[];
-  
+
   constructor(public navCtrl: NavController, 
               public params: NavParams,
               private httpService:HttpService,
               public alertCtrl: AlertController) {
     this.user = params.get('user');
-
-    // get cars of user
-    this.httpService.get('carsbyuser/', this.user.id).subscribe(response => {
-      this.userCars = response.data;
-    })
   }
 
   editUser() {
@@ -42,7 +36,7 @@ export class UserDetailsPage {
         {
           text: 'Sim',
           handler: () => {
-            this.httpService.delete('users/delete/', this.user.id).subscribe(response => {
+            this.httpService.delete('user/delete/', this.user.id).subscribe(response => {
               this.navCtrl.push(UsersPage);
             })
           }

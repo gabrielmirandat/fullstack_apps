@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { CarsPage } from '../cars'
-import { CarEditPage } from '../edit/car-edit'
 import { HttpService} from '../../../app/services/http.service'
 import { AlertController } from 'ionic-angular';
 
@@ -18,12 +17,6 @@ export class CarDetailsPage {
               private httpService:HttpService,
               public alertCtrl: AlertController) {
     this.car = params.get('car');
-  }
-
-  editCar() {
-    this.navCtrl.push(CarEditPage, {
-      car:this.car
-    });
   }
 
   deleteCar() {

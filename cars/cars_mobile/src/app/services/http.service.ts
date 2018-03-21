@@ -20,12 +20,12 @@ export class HttpService{
         return this.http.get(this.baseUrl + url + id);
     }
 
-    add(url, user) {
-        return this.http.post(this.baseUrl + url, user);
+    add(url, data) {
+        return this.http.post(this.baseUrl + url, data);
     }
 
-    update(url, id, user) {
-        return this.http.put(this.baseUrl + url + id, user);
+    update(url, id, data) {
+        return this.http.put(this.baseUrl + url + id, data);
     }
 
     delete(url, id) {

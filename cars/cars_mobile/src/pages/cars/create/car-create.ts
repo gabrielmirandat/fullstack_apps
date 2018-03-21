@@ -11,8 +11,8 @@ import { HttpService} from '../../../app/services/http.service'
 })
 export class CarCreatePage {
   private form : FormGroup;
-  brands:any[];
-  models:any[];
+  brands:any[] = [];
+  models:any[] = [];
  
   constructor(public navCtrl: NavController, 
               public params: NavParams,

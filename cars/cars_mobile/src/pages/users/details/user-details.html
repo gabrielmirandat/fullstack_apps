@@ -25,14 +25,6 @@
       <h2> State </h2> <p text-right> {{user.state}} </p>
     </ion-item>
 
-    <ion-item>
-      <h2> Cars </h2> 
-      <div  *ngIf="userCars?.length">
-        <p text-right *ngFor="let car of userCars"> {{car.brand}} {{car.model}} {{car.plate}} </p>
-      </div>
-      <p text-right *ngIf="!userCars?.length"> none </p>
-    </ion-item>
-    
     <button ion-button icon-only full (click)="editUser()">
       <ion-icon name="create"></ion-icon>
     </button>

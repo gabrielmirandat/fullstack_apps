@@ -10,7 +10,7 @@
 
       <ion-item>
         <ion-label>Model</ion-label>
-        <ion-select formControlName="model_id">
+        <ion-select formControlName="model_id" [disabled]="!models?.length">
             <ion-option *ngFor="let model of models" value="{{model.id}}">{{model.name}}</ion-option>
           </ion-select>
       </ion-item>

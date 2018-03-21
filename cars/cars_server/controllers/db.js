@@ -35,7 +35,7 @@ module.exports = (app) => {
 
     // create users table
     createCarsTable(req, res) {
-      let sql = 'CREATE TABLE cars(id INT AUTO_INCREMENT, user_id INT, brand_id INT NOT NULL, model_id INT NOT NULL, chassi_number VARCHAR(17) UNIQUE NOT NULL, plate VARCHAR(7) UNIQUE NOT NULL, release_year VARCHAR(4), PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES users(id), FOREIGN KEY (brand_id) REFERENCES brands(id), FOREIGN KEY (model_id) REFERENCES models(id))';
+      let sql = 'CREATE TABLE cars(id INT AUTO_INCREMENT, brand_id INT NOT NULL, model_id INT NOT NULL, chassi_number VARCHAR(17) UNIQUE NOT NULL, plate VARCHAR(7) UNIQUE NOT NULL, release_year VARCHAR(4), PRIMARY KEY(id), FOREIGN KEY (brand_id) REFERENCES brands(id), FOREIGN KEY (model_id) REFERENCES models(id))';
       db.query(sql, (err, result) => {
         if(err) throw err;
         console.log(result)
@@ -43,9 +43,9 @@ module.exports = (app) => {
       });
     },
 
-    // add first user
+    // add first car
     addCar1(req, res) {
-      let car1 = {user_id: 1, brand_id: 1, model_id: 1, chassi_number: "9BWDD21J814027665", plate: "HMT9887", release_year: "2003"};
+      let car1 = {brand_id: 1, model_id: 1, chassi_number: "9BWDD21J814027665", plate: "HMT9887", release_year: "2003"};
       let sql = 'INSERT INTO cars SET ?';
       let query = db.query(sql, car1, (err, result) => {
         if(err) throw err;
@@ -72,7 +72,28 @@ module.exports = (app) => {
         console.log(result)
         res.send('Models table created');
       });
-    }
+    },
+
+    // create brands table
+    createRentalsTable(req, res) {
+      let sql = 'CREATE TABLE rentals(id INT AUTO_INCREMENT, user_id INT NOT NULL, car_id INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES users(id), FOREIGN KEY (car_id) REFERENCES cars(id))';
+      db.query(sql, (err, result) => {
+        if(err) throw err;
+        console.log(result)
+        res.send('Rentals table created');
+      });
+    },
+
+    // add first rental
+    addRental1(req, res) {
+      let rental1 = {user_id: 1, car_id: 1};
+      let sql = 'INSERT INTO rentals SET ?';
+      let query = db.query(sql, rental1, (err, result) => {
+        if(err) throw err;
+        console.log(result)
+        res.send('Rental1 added');
+      });
+    },
   }
   return DbController
 };

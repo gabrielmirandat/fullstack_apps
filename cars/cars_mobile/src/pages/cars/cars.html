@@ -13,8 +13,8 @@
         </button>
         <button ion-item *ngFor="let car of cars" (click)="viewCar(car)">
             <ion-icon name="eye" item-right></ion-icon>
-            <h2> {{ car.brand }} </h2>
-            <p> {{ car.model }} </p>
+            <h2> {{ car.brand_name }} {{ car.model_name }}</h2>
+            <p> {{car.plate}} </p>
         </button>  
     </ion-list>
 </ion-content>

@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-list no-lines>
+    <form [formGroup]="form" (ngSubmit)="createRental()">
+      <ion-item>
+        <ion-label>User</ion-label>
+        <ion-select formControlName="user_id">
+          <ion-option *ngFor="let user of users_available" value="{{user.id}}">{{user.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Car</ion-label>
+        <ion-select formControlName="car_id">
+          <ion-option *ngFor="let car of cars_available" value="{{car.id}}">{{car.car_brand}} {{car.car_model}}</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <button ion-button full type="submit" [disabled]="!form.valid">Create</button>
+    </form>
+  </ion-list>
+</ion-content>   

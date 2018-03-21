@@ -11,7 +11,9 @@ import { UserEditPage } from '../pages/users/edit/user-edit';
 import { CarsPage } from '../pages/cars/cars';
 import { CarDetailsPage } from '../pages/cars/details/car-details';
 import { CarCreatePage } from '../pages/cars/create/car-create';
-import { CarEditPage } from '../pages/cars/edit/car-edit';
+
+import { RentalsPage } from '../pages/rentals/rentals';
+import { RentalCreatePage } from '../pages/rentals/create/rental-create';
 
 import { AboutPage } from '../pages/about/about';
 
@@ -34,7 +36,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CarsPage,
     CarCreatePage,
     CarDetailsPage,
-    CarEditPage,
+
+    RentalsPage,
+    RentalCreatePage,
     
     AboutPage,
   ],
@@ -56,7 +60,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CarsPage,
     CarCreatePage,
     CarDetailsPage,
-    CarEditPage,
+
+    RentalsPage,
+    RentalCreatePage,
     
     AboutPage,
   ],

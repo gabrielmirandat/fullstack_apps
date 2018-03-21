@@ -10,15 +10,18 @@ import {CarDetailsPage} from './details/car-details'
   templateUrl: 'cars.html'
 })
 export class CarsPage {
-  cars: any;
-  brand_car:string;
-  model_car:string;
+  cars: any[] = [];
   
   constructor(public navCtrl: NavController, 
               private httpService:HttpService) {
-    this.httpService.getAll('cars/get/').subscribe(response => {
-      this.cars = response.data;
-    })
+      
+      console.log('CONSTRUTOR')
+
+      this.cars = [];
+    
+      this.httpService.getAll('carswithbrandsmodels/get/').subscribe(response => {
+        this.cars = response.data;
+      })
   }
 
   ngOnInit () {

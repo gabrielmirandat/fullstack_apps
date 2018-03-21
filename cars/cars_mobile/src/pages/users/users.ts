@@ -10,10 +10,13 @@ import {UserDetailsPage} from './details/user-details'
   templateUrl: 'users.html'
 })
 export class UsersPage {
-  users: any[];
+  users: any[] = [];
   
   constructor(public navCtrl: NavController, 
               private httpService:HttpService) {
+
+    console.log('CONSTRUTOR')
+    this.users = [];
     this.httpService.getAll('users/get/').subscribe(response => {
       this.users = response.data;
     })
